@@ -236,7 +236,7 @@ p-use-ийг салаа тус бүрээр (T/F) тусдаа хос гэж т�
 **M3 яагаад ямар ч тест унагаагүй вэ?** `total` гэсэн def-д нэг ч use байхгүй (DU хосгүй "үхсэн def", dd/du гажилт) — програмын гаралтад огт нөлөөлөхгүй тул ямар ч тест, ямар ч хамралтын хэмжүүр (branch, DU) үүнийг илрүүлэхгүй; javac ч анхааруулдаггүй. Үүнийг **статик анализ** (IDE-ийн шалгагч, PMD `UnusedLocalVariable`, SpotBugs `DLS_DEAD_LOCAL_STORE`, SonarLint) барих ёстой. IDE-ийн анхааруулга:
 
 ```
-TODO-IDE-WARNING
+TODO-IDE-WARNING : The value of the local variable total is not usedJava(536870973)
 ```
 
 Эцсийн байдал: `git status`-д `DataFlowTargets.java` өөрчлөгдсөн гэж гараагүй; `results/mvn-verify-final.txt` — Tests run: 14, Failures: 0; `results/jacoco-final.csv` — BRANCH_MISSED = 0 (16/16).
