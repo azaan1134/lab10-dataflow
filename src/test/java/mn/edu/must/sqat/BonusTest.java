@@ -65,4 +65,12 @@ class BonusTest {
     void twoStreaksOfFour_noStreakBonus() {
         assertEquals(5, DataFlowTargets.bonus(new int[] {1, 1, 1, 1, 0, 1, 1, 1, 1}, 8));
     }
+
+    // ---------- Stage 3: kills mutant M2 (best = present) ----------
+
+    @Test
+    @DisplayName("K1 [1,1,0,1,1,1] thr=10 -> 0 : present=5 but longest streak=3; kills M2 (best=present)")
+    void presentFiveButStreakThree_killsM2() {
+        assertEquals(0, DataFlowTargets.bonus(new int[] {1, 1, 0, 1, 1, 1}, 10));
+    }
 }
